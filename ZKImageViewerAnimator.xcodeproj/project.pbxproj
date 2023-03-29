@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C65BD3EFCB5046DB329A706A /* Pods_ZKImageViewerAnimator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE710DD0DA8221087BBCE97 /* Pods_ZKImageViewerAnimator.framework */; };
+		DEE3EADF29D3CC3A00ECCDF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3EADE29D3CC3A00ECCDF2 /* AppDelegate.swift */; };
+		DEE3EAE329D3CC3A00ECCDF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3EAE229D3CC3A00ECCDF2 /* ViewController.swift */; };
+		DEE3EAE629D3CC3A00ECCDF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEE3EAE429D3CC3A00ECCDF2 /* Main.storyboard */; };
+		DEE3EAE829D3CC3B00ECCDF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEE3EAE729D3CC3B00ECCDF2 /* Assets.xcassets */; };
+		DEE3EAEB29D3CC3B00ECCDF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEE3EAE929D3CC3B00ECCDF2 /* LaunchScreen.storyboard */; };
+		DEE3EAF429D3CC7600ECCDF2 /* ZKImageViewerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3EAF329D3CC7600ECCDF2 /* ZKImageViewerAnimator.swift */; };
+		DEE3EAF629D3CC8600ECCDF2 /* ZKImageViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3EAF529D3CC8600ECCDF2 /* ZKImageViewerView.swift */; };
+		DEE3EAF829D3CC9300ECCDF2 /* ZKImageViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3EAF729D3CC9300ECCDF2 /* ZKImageViewerController.swift */; };
+		DEE3EAFA29D3D38B00ECCDF2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3EAF929D3D38B00ECCDF2 /* SceneDelegate.swift */; };
+		DEE3EAFC29D3D49900ECCDF2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE3EAFB29D3D49900ECCDF2 /* UIKit.framework */; };
+		DEE3EAFE29D3D4A000ECCDF2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE3EAFD29D3D4A000ECCDF2 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0644B6AF1829FBC8ED5A1A17 /* Pods-ZKImageViewerAnimator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKImageViewerAnimator.debug.xcconfig"; path = "Target Support Files/Pods-ZKImageViewerAnimator/Pods-ZKImageViewerAnimator.debug.xcconfig"; sourceTree = "<group>"; };
+		2CE710DD0DA8221087BBCE97 /* Pods_ZKImageViewerAnimator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZKImageViewerAnimator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BB9A9D2FBDD0BF165EF4D72 /* Pods-ZKImageViewerAnimator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKImageViewerAnimator.release.xcconfig"; path = "Target Support Files/Pods-ZKImageViewerAnimator/Pods-ZKImageViewerAnimator.release.xcconfig"; sourceTree = "<group>"; };
+		DEE3EADB29D3CC3A00ECCDF2 /* ZKImageViewerAnimator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZKImageViewerAnimator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEE3EADE29D3CC3A00ECCDF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DEE3EAE229D3CC3A00ECCDF2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DEE3EAE529D3CC3A00ECCDF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DEE3EAE729D3CC3B00ECCDF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DEE3EAEA29D3CC3B00ECCDF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DEE3EAEC29D3CC3B00ECCDF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEE3EAF329D3CC7600ECCDF2 /* ZKImageViewerAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKImageViewerAnimator.swift; sourceTree = "<group>"; };
+		DEE3EAF529D3CC8600ECCDF2 /* ZKImageViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKImageViewerView.swift; sourceTree = "<group>"; };
+		DEE3EAF729D3CC9300ECCDF2 /* ZKImageViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKImageViewerController.swift; sourceTree = "<group>"; };
+		DEE3EAF929D3D38B00ECCDF2 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DEE3EAFB29D3D49900ECCDF2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DEE3EAFD29D3D4A000ECCDF2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DEE3EAD829D3CC3A00ECCDF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C65BD3EFCB5046DB329A706A /* Pods_ZKImageViewerAnimator.framework in Frameworks */,
+				DEE3EAFE29D3D4A000ECCDF2 /* Foundation.framework in Frameworks */,
+				DEE3EAFC29D3D49900ECCDF2 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0875619CAACCA85614EA2F61 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0644B6AF1829FBC8ED5A1A17 /* Pods-ZKImageViewerAnimator.debug.xcconfig */,
+				4BB9A9D2FBDD0BF165EF4D72 /* Pods-ZKImageViewerAnimator.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		751324D8E657FF49A299ED8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEE3EAFD29D3D4A000ECCDF2 /* Foundation.framework */,
+				DEE3EAFB29D3D49900ECCDF2 /* UIKit.framework */,
+				2CE710DD0DA8221087BBCE97 /* Pods_ZKImageViewerAnimator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEE3EAD229D3CC3A00ECCDF2 = {
+			isa = PBXGroup;
+			children = (
+				DEE3EADD29D3CC3A00ECCDF2 /* ZKImageViewerAnimator */,
+				DEE3EADC29D3CC3A00ECCDF2 /* Products */,
+				0875619CAACCA85614EA2F61 /* Pods */,
+				751324D8E657FF49A299ED8F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DEE3EADC29D3CC3A00ECCDF2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DEE3EADB29D3CC3A00ECCDF2 /* ZKImageViewerAnimator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DEE3EADD29D3CC3A00ECCDF2 /* ZKImageViewerAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				DEE3EAF229D3CC4F00ECCDF2 /* ImageViewer */,
+				DEE3EADE29D3CC3A00ECCDF2 /* AppDelegate.swift */,
+				DEE3EAF929D3D38B00ECCDF2 /* SceneDelegate.swift */,
+				DEE3EAE229D3CC3A00ECCDF2 /* ViewController.swift */,
+				DEE3EAE429D3CC3A00ECCDF2 /* Main.storyboard */,
+				DEE3EAE729D3CC3B00ECCDF2 /* Assets.xcassets */,
+				DEE3EAE929D3CC3B00ECCDF2 /* LaunchScreen.storyboard */,
+				DEE3EAEC29D3CC3B00ECCDF2 /* Info.plist */,
+			);
+			path = ZKImageViewerAnimator;
+			sourceTree = "<group>";
+		};
+		DEE3EAF229D3CC4F00ECCDF2 /* ImageViewer */ = {
+			isa = PBXGroup;
+			children = (
+				DEE3EAF329D3CC7600ECCDF2 /* ZKImageViewerAnimator.swift */,
+				DEE3EAF529D3CC8600ECCDF2 /* ZKImageViewerView.swift */,
+				DEE3EAF729D3CC9300ECCDF2 /* ZKImageViewerController.swift */,
+			);
+			path = ImageViewer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DEE3EADA29D3CC3A00ECCDF2 /* ZKImageViewerAnimator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEE3EAEF29D3CC3B00ECCDF2 /* Build configuration list for PBXNativeTarget "ZKImageViewerAnimator" */;
+			buildPhases = (
+				A08EC5E845F8B91729A69718 /* [CP] Check Pods Manifest.lock */,
+				DEE3EAD729D3CC3A00ECCDF2 /* Sources */,
+				DEE3EAD829D3CC3A00ECCDF2 /* Frameworks */,
+				DEE3EAD929D3CC3A00ECCDF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZKImageViewerAnimator;
+			productName = ZKImageViewerAnimator;
+			productReference = DEE3EADB29D3CC3A00ECCDF2 /* ZKImageViewerAnimator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DEE3EAD329D3CC3A00ECCDF2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					DEE3EADA29D3CC3A00ECCDF2 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = DEE3EAD629D3CC3A00ECCDF2 /* Build configuration list for PBXProject "ZKImageViewerAnimator" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DEE3EAD229D3CC3A00ECCDF2;
+			productRefGroup = DEE3EADC29D3CC3A00ECCDF2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DEE3EADA29D3CC3A00ECCDF2 /* ZKImageViewerAnimator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DEE3EAD929D3CC3A00ECCDF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEE3EAEB29D3CC3B00ECCDF2 /* LaunchScreen.storyboard in Resources */,
+				DEE3EAE829D3CC3B00ECCDF2 /* Assets.xcassets in Resources */,
+				DEE3EAE629D3CC3A00ECCDF2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A08EC5E845F8B91729A69718 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZKImageViewerAnimator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DEE3EAD729D3CC3A00ECCDF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEE3EAE329D3CC3A00ECCDF2 /* ViewController.swift in Sources */,
+				DEE3EADF29D3CC3A00ECCDF2 /* AppDelegate.swift in Sources */,
+				DEE3EAF629D3CC8600ECCDF2 /* ZKImageViewerView.swift in Sources */,
+				DEE3EAF829D3CC9300ECCDF2 /* ZKImageViewerController.swift in Sources */,
+				DEE3EAF429D3CC7600ECCDF2 /* ZKImageViewerAnimator.swift in Sources */,
+				DEE3EAFA29D3D38B00ECCDF2 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DEE3EAE429D3CC3A00ECCDF2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEE3EAE529D3CC3A00ECCDF2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DEE3EAE929D3CC3B00ECCDF2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEE3EAEA29D3CC3B00ECCDF2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DEE3EAED29D3CC3B00ECCDF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DEE3EAEE29D3CC3B00ECCDF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DEE3EAF029D3CC3B00ECCDF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0644B6AF1829FBC8ED5A1A17 /* Pods-ZKImageViewerAnimator.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ZKImageViewerAnimator/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kun.ZKImageViewerAnimator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DEE3EAF129D3CC3B00ECCDF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BB9A9D2FBDD0BF165EF4D72 /* Pods-ZKImageViewerAnimator.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ZKImageViewerAnimator/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kun.ZKImageViewerAnimator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DEE3EAD629D3CC3A00ECCDF2 /* Build configuration list for PBXProject "ZKImageViewerAnimator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEE3EAED29D3CC3B00ECCDF2 /* Debug */,
+				DEE3EAEE29D3CC3B00ECCDF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEE3EAEF29D3CC3B00ECCDF2 /* Build configuration list for PBXNativeTarget "ZKImageViewerAnimator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEE3EAF029D3CC3B00ECCDF2 /* Debug */,
+				DEE3EAF129D3CC3B00ECCDF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DEE3EAD329D3CC3A00ECCDF2 /* Project object */;
+}
