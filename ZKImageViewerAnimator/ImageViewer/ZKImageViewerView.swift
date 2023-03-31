@@ -11,6 +11,9 @@ import UIKit
 class ZKImageViewerView: UIView {
     var tapPressClosure: (() -> Void)?
     var longPressClosure: (() -> Void)?
+    
+    private var panBeginPoint: CGPoint = .zero
+    private var maxHeight: CGFloat { return self.bounds.size.height * 0.2 }
 
     private lazy var scrollView: UIScrollView = {
         let tmp = UIScrollView(frame: UIScreen.main.bounds)
@@ -35,7 +38,7 @@ class ZKImageViewerView: UIView {
         return tmp
     }()
 
-    public override init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
         addGestures()
@@ -46,7 +49,7 @@ class ZKImageViewerView: UIView {
     }
 
     private func setupView() {
-        backgroundColor = .black
+        backgroundColor = .clear
         clipsToBounds = true
         addSubview(scrollView)
         scrollView.addSubview(imageView)
@@ -65,6 +68,12 @@ class ZKImageViewerView: UIView {
 
         let pinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinchGesture(_:)))
         scrollView.addGestureRecognizer(pinch)
+        
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
+        pan.delegate = self
+        self.addGestureRecognizer(pan)
+        tap.require(toFail: pan)
+        doubleTap.require(toFail: pan)
 
         let long = UILongPressGestureRecognizer(target: self, action: #selector(handleLongGesture(_:)))
         self.addGestureRecognizer(long)
@@ -85,6 +94,36 @@ class ZKImageViewerView: UIView {
             gesture.scale = 1.0
         }
     }
+    
+    
+    @objc private func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
+        guard scrollView.zoomScale == 1 else { return }
+        let point = gesture.location(in: gesture.view)
+        let translation = gesture.translation(in: gesture.view)
+        var center = imageView.center
+        switch gesture.state {
+        case .began:
+            panBeginPoint = point
+        case .changed:
+            center.x += (point.x - panBeginPoint.x)
+            center.y += (point.y - panBeginPoint.y)
+            scrollView.center = center
+            let value = 1 - abs(translation.y)/self.bounds.size.height
+            self.superview?.alpha = value
+        default:
+            if case .ended = gesture.state {
+                if abs(point.y - panBeginPoint.y) > maxHeight {
+                    tapPressClosure?()
+                    return
+                }
+            }
+            UIView.animate(withDuration: 0.3) {
+                self.scrollView.center = center
+                self.scrollView.transform = .identity
+                self.superview?.alpha = 1
+            }
+        }
+    }
 
     @objc private func handleLongGesture(_ gesture: UILongPressGestureRecognizer) {
         guard gesture.state == .began else { return }
@@ -93,13 +132,25 @@ class ZKImageViewerView: UIView {
 }
 
 extension ZKImageViewerView: UIScrollViewDelegate {
-    public func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
     }
 
-    public func scrollViewDidZoom(_ scrollView: UIScrollView) {
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
         let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
         let offsetY = max((scrollView.bounds.height - scrollView.contentSize.height) * 0.5, 0)
         imageView.center = CGPoint(x: scrollView.contentSize.width * 0.5 + offsetX, y: scrollView.contentSize.height * 0.5 + offsetY)
+    }
+}
+
+extension ZKImageViewerView: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        if let pan = gestureRecognizer as? UIPanGestureRecognizer {
+            let translation = pan.translation(in: gestureRecognizer.view)
+            if abs(translation.x) <= abs(translation.y) {
+                return false
+            }
+        }
+        return true
     }
 }
