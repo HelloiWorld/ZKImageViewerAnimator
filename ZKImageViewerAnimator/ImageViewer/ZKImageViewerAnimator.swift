@@ -8,17 +8,34 @@
 import Foundation
 import UIKit
 
-class ZKImageViewerAnimator: NSObject, UIViewControllerAnimatedTransitioning {
-    var transitionImageView: UIImageView?
+public protocol ZKImageViewerTransitionProtocol where Self: UIViewController {
+    var animator: ZKImageViewerAnimator { get }
+}
 
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+public class ZKImageViewerAnimator: NSObject {
+    var transitionImageView: UIImageView?
+}
+
+extension ZKImageViewerAnimator: UIViewControllerTransitioningDelegate {
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard presented is ZKImageViewerController else { return nil }
+        return self
+    }
+
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard dismissed is ZKImageViewerController else { return nil }
+        return self
+    }
+}
+
+extension ZKImageViewerAnimator: UIViewControllerAnimatedTransitioning {
+    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3
     }
 
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let fromVC = transitionContext.viewController(forKey: .from),
-              let toVC = transitionContext.viewController(forKey: .to),
-              let transitionImageView = transitionImageView else {
+              let toVC = transitionContext.viewController(forKey: .to) else {
             transitionContext.completeTransition(false)
             return
         }
@@ -30,18 +47,22 @@ class ZKImageViewerAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             containerView.addSubview(toVC.view)
             toVC.view.alpha = 0
 
-            let transitionImageViewFrame = transitionImageView.convert(transitionImageView.bounds, to: containerView)
-            let imageViewCopy = UIImageView(frame: transitionImageViewFrame)
-            imageViewCopy.image = transitionImageView.image
-            imageViewCopy.contentMode = .scaleAspectFit
-            imageViewCopy.clipsToBounds = true
-            containerView.addSubview(imageViewCopy)
+            var transImageView: UIImageView?
+            if let transitionImageView = self.transitionImageView {
+                let transitionImageViewFrame = transitionImageView.convert(transitionImageView.bounds, to: containerView)
+                let imageViewCopy = UIImageView(frame: transitionImageViewFrame)
+                imageViewCopy.image = transitionImageView.image
+                imageViewCopy.contentMode = .scaleAspectFit
+                imageViewCopy.clipsToBounds = true
+                containerView.addSubview(imageViewCopy)
+                transImageView = imageViewCopy
+            }
 
-            UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+            UIView.animate(withDuration: self.transitionDuration(using: transitionContext), animations: {
                 toVC.view.alpha = 1
-                imageViewCopy.frame = toVC.view.bounds
+                transImageView?.frame = toVC.view.bounds
             }, completion: { finished in
-                imageViewCopy.removeFromSuperview()
+                transImageView?.removeFromSuperview()
                 transitionContext.completeTransition(finished)
             })
         }
@@ -50,19 +71,26 @@ class ZKImageViewerAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             containerView.addSubview(fromVC.view)
             fromVC.view.alpha = 1
 
-            let transitionImageViewFrame = transitionImageView.convert(transitionImageView.bounds, to: containerView)
-            let imageViewCopy = UIImageView(frame: fromVC.view.bounds)
-            imageViewCopy.image = transitionImageView.image
-            imageViewCopy.contentMode = .scaleAspectFit
-            imageViewCopy.clipsToBounds = true
-            containerView.addSubview(imageViewCopy)
+            var transImageView: UIImageView?
+            var transImageViewFrame: CGRect = .zero
+            if let transitionImageView = self.transitionImageView {
+                let transitionImageViewFrame = transitionImageView.convert(transitionImageView.bounds, to: containerView)
+                let imageViewCopy = UIImageView(frame: fromVC.view.bounds)
+                imageViewCopy.image = transitionImageView.image
+                imageViewCopy.contentMode = .scaleAspectFit
+                imageViewCopy.clipsToBounds = true
+                containerView.addSubview(imageViewCopy)
+                transImageView = imageViewCopy
+                transImageViewFrame = transitionImageViewFrame
+            }
 
-            UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+            UIView.animate(withDuration: self.transitionDuration(using: transitionContext), animations: {
                 fromVC.view.alpha = 0
-                imageViewCopy.frame = transitionImageViewFrame
+                transImageView?.frame = transImageViewFrame
             }, completion: { finished in
-                imageViewCopy.removeFromSuperview()
+                transImageView?.removeFromSuperview()
                 transitionContext.completeTransition(finished)
+                self.transitionImageView = nil
             })
         }
     }

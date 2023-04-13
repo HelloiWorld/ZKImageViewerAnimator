@@ -21,10 +21,10 @@ class ZKImageViewerController: UIViewController {
         return tmp
     }()
 
-    class func show(with image: UIImage?, in vc: UIViewController & UIViewControllerTransitioningDelegate) {
+    class func show(with image: UIImage?, in vc: UIViewController & ZKImageViewerTransitionProtocol) {
         let targetVC = ZKImageViewerController()
         targetVC.modalPresentationStyle = .custom
-        targetVC.transitioningDelegate = vc
+        targetVC.transitioningDelegate = vc.animator
         vc.present(targetVC, animated: true) {
             targetVC.previewView.imageView.image = image
         }

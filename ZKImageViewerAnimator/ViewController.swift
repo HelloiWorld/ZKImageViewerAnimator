@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ZKImageViewerTransitionProtocol {
     
-    private lazy var animator = ZKImageViewerAnimator()
+    private(set) lazy var animator = ZKImageViewerAnimator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,23 +31,9 @@ class ViewController: UIViewController {
         animator.transitionImageView = view
         ZKImageViewerController.show(with: view.image, in: self)
     }
-
-}
-
-extension ViewController: UIViewControllerTransitioningDelegate {
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        guard presented is ZKImageViewerController else { return nil }
-        return animator
-    }
-
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        guard dismissed is ZKImageViewerController else { return nil }
-        return animator
-    }
 }
 
 extension UIColor {
-    
     // 生成纯色图片
     func imageWithColor(_ size: CGSize) -> UIImage {
         let renderer = UIGraphicsImageRenderer(size: size)
@@ -58,6 +44,5 @@ extension UIColor {
         }
         return image
     }
-    
 }
 
